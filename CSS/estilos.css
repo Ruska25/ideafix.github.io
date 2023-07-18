@@ -1,0 +1,493 @@
+*{
+  margin:0;
+  padding:0;
+  /*! scroll: 0; */
+}
+body{
+  background-color: rgb(24, 24, 24);
+ 
+
+}
+
+.menu{
+  height:8vh; /*le da la altura al menu*/
+  background-color:rgb(255, 255, 255); /*cambia el color del fondo*/
+  padding:20px; /* establece espacio interno del menu*/
+  display:flex; /*alinea los elementos del menú*/
+  justify-content:space-evenly; /*Distribuyeel espacio entre los elementos del menú */
+  align-items: center; /*alinia verticalmente los elementos*/
+  font-family: 'Montserrat', sans-serif; /*aplicamos una tipografia*/
+  top: 0; /*crea  posición en la parte superior de la pagina*/
+  width:100%; /*le da un ancho completo al menu*/
+  
+}
+
+.menu img{
+  max-width: 12rem; /*establece las medidas de la imagen*/
+  
+}
+nav ul{
+  list-style:none; /*se encarga de que no tenga estilos*/
+  display:flex; 
+
+}
+nav li:not(:last-child){
+  margin-right:20px; /*define un margen en la parte derecha*/
+
+}
+nav li:hover{
+  border: 2px solid #8fa0ff; /* define el grosor y el color del borde*/
+  border-radius: 20px; /* define el radius del borde*/
+  padding: 1vh; /*crea un espacio interno por los cuatro lados*/
+
+}
+
+nav a{
+  font-size: 1.2em; /* define el tamaño del fuente*/
+  color:rgb(0, 0, 0); /*le asigna el color a la fuente*/
+  text-decoration: none; /* se encarga de que no tennga ningun estilo al elemento, sera underline o otra cosa*/
+}
+.despejar, .cancelar{
+  -webkit-appearance: none; /*desahabilita la apariencia del boton*/
+  appearance: none;
+  display: none; /*oculta el boton*/
+}
+
+@media screen and (max-width:800px){/*aplicamos estilos para pantallas  de tamaño reducido*/
+  .menu{
+    justify-content:space-around; /*cambia laa distribución del esspacio enre los elementos*/
+  }
+  nav{
+      position:fixed; /*fija la posición del menu*/
+      top:-100vh; /*muevo el meno hacia arriba y oculto*/
+      left:0;
+      padding:20px;
+      width:calc(100% - 40px);
+      height:calc(100vh - 40px);
+      background-color: #8fa0ff;    
+      transition:top 0.8s;   
+   }
+   .desplegado{
+      top:0;
+   }
+   nav ul{
+      display: block;
+   }
+   nav li:not(:last-child){
+      margin-right:0;
+   }
+   nav a {
+      color:rgb(0, 0, 0);
+      font-size: 2em;
+   }
+   .cancelar{
+      display: block;
+      background-color: transparent; /*le damos un fondo transparente*/
+      border:none;
+      color: rgb(255, 255, 255);
+      font-size: 1.5em;
+      cursor:pointer; /*al mover el cursor encima se convierte en pointer*/
+      position: absolute; /* asigna posición absoluta*/
+      top:20px;
+      right:20px;
+   }
+   .despejar{
+      display: block;
+      background-color: transparent;
+      border:1px solid #999;
+      border-radius:5px;
+      width:30px;
+      padding: 5px 5px 0;
+  }
+  .despejar span{
+  display:block;
+  height:3px;
+  background-color:#777;
+  margin-bottom:5px;
+}
+
+}
+
+
+header{
+    height:100vh;
+    width:100%;
+    display: flex;
+    flex-direction: column;/* alineamos los elementos en columna*/
+    justify-content: center;
+    background-image: url("../img/fondo_ind.png"); /*introducimos un fondo con el enlace*/
+    background-size: cover; /* ajustamos la imagen al tamaño del encabezado*/
+    background-repeat: no-repeat; /* Nos aseguramos que no se repita la imagen del fondo*/
+    background-position: center; /*posicionamos la imagen al centro de heade*/
+    color: #1c1b1b;
+    
+}
+header h1 {
+    font-size: 3.2em;
+    text-align: center;
+    font-weight:bolder; /*aplicamos el grosor de la fuente*/
+    margin-top: 5%;
+
+}
+header h1 span:nth-child(2){
+    font-weight: bold;
+    font-size: 0.8em;
+    
+
+}
+header h1 span:nth-child(4){
+    font-weight: normal;
+    font-size: 0.8em;
+    
+
+}
+header a{
+    display: flex;
+    justify-content: center;
+    max-width: 150px;
+    align-self: center;
+    width: 100%;
+    height: 6%;
+    border-radius: 50% 5px solid rgb(34, 34, 34);
+    text-decoration: none;
+    margin-top: 3%;
+  }
+header a button{
+    width: 45vw;
+    border-radius: 20px;
+    padding: ;
+    font-size: 1.3em;
+    border-color: #424141;
+    
+}
+
+
+
+
+
+/*servicios*/
+.frase{
+    height:auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    background-color: white;
+    padding: 5vh;
+}
+.frase h2{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+.frase p{
+    text-align: center;
+    font-size: 1em;
+
+}
+.cajas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px;
+  }
+  .grupo1, .grupo2{ /* alineamos los elementos horizontalmente y posicionamos por el centro*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 3vh;
+    flex-wrap: wrap; /* se encarga de ajustar la distribución de los elementos a a tamaño de la pantalla*/
+  }
+  
+  .caja{
+    width: 200px;
+    height: 300px;
+    perspective: 1000px; /*estabecemos el punto de fugaa*/
+  }
+  
+  .contenido {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s; /* transformamos el elemento por 0,6segundo*/
+    transform-style: preserve-3d; /*aplicamos ell estilo de transfoormación*/
+  }
+  
+  .tarjeta:hover .contenido {
+    transform: rotateY(180deg); /*al mover el cursor encima el elemnto podra girar 180grados*/
+  }
+  
+  .front,
+  .back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* mantiene oculta la cara posterior del elemento*/
+  }
+  
+  .front {
+    position: absolute;
+    background-color: #fff;
+  }
+  
+  .front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*ajustamos el tamano del elemento dentro del contenedor, para que cubra todo el espacio*/
+     z-index: -1; /*determinamos la posicón del elemento respecto a otros elementos*/
+  }
+  
+  .back {
+    position: absolute;
+    background-color: #1c1b1b;
+    color: white;
+    transform: rotateY(180deg); /* se encarga que elemento de un giro verticalmente con 180grados*/
+  }
+  
+  
+  .back h3,
+  .back p {
+    padding: 20px;
+   
+  }
+   
+  .front h3 {
+    position: absolute;
+    top:18vh;   
+    width: 100%;
+    text-align: center;   
+   
+    color: white;
+  }
+  button:hover {
+    background-color: #8fa0ff;
+  }
+
+
+
+  /*redes*/
+
+  .redes{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1c1b1b;
+  }
+  .redes h2{
+    font-size: 1.5em;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  .redes div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5vh;
+  }
+
+.redes a{
+    margin: 0 10px;
+}
+.redes a img{
+    height: 5vh;
+}
+
+
+/*puntos*/
+.puntos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: auto;
+  width: 100%;
+  background-color: white;
+  padding: 5vh 0;
+  flex-wrap: wrap; /* ajusta el contenido en caso de que se necesite envolver a otra línea */
+}
+.puntos h2{
+  font-size: 1.5em;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-align: center;
+ 
+}
+.puntos p{
+  text-align: center;
+  font-size: 1em;
+}
+.puntos ul {
+  margin-top: 5vh;
+  padding-left: 0;
+  list-style-type: none;
+  padding:10px;
+}
+
+.puntos ul li::before {
+  content: "•"; /* Añade un punto antes de cada elemento de lista */
+  margin-right: 5px;
+}
+.puntos li span{
+  color: #8fa0ff;
+  font-weight: bold;
+}
+.puntos li{
+  margin-bottom: 10px;
+}
+
+.puntos img{
+  max-width: 40%;
+  padding-left: 60%;
+}
+
+/*AL-FR*/
+.al-fr{
+  height: auto; /*le da una altura de orma automatica*/
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: #1c1b1b;
+}
+.al-fr h2{
+  font-size: 1.5em;
+  color:#ffffff;
+  font-weight: bold;
+  text-align: center;
+  margin: 5vh;
+}
+
+
+
+
+  /*descubre*/
+
+  .descubre{
+    height:auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 5vh;
+  }
+  .descubre h2{
+    font-size: 1.5em;
+    color:#000000;
+    font-weight: bold;
+    text-align: center;
+  }
+  .descubre p{
+    text-align: center;
+    font-size: 1em;
+
+  }
+  .descubre div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    align-self: center;
+  }
+  .descubre h3{
+    padding:6%;
+    margin: 20px;
+    text-align: center;
+    font-size: 1.5em;   
+   
+    background-color: #1c1b1b;
+    color: white;
+    min-width: 21vw;
+  }
+
+
+  /*formulario*/
+
+.formulario{ /*distribuimos el formularios de forma vertical, alineamos por centro y abajo le aplicamos una path para el diseño*/
+    height: 100vh;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: white;
+    clip-path: polygon(0.06% 0.97%, 99.63% 1.53%, 99.79% 99.22%, 10.65% 88.78%);
+    background-color: #fff;
+}
+form{ /* encargamoos de alinea del contenido dentro del formulario*/
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5vh;
+    
+}
+form label{ /* alineamos los textos del formulario*/
+    text-align: left;
+}
+form input{ /* aplicamos las medidas y el border-radius */
+    border-radius: 7px;
+    height: 4vh;
+    width: 29vw;
+}
+form button{ /* estilizamos el boton , dando un aancho, un color de fondo, espacio internos , el tamaño de fuente y el coloor del mismo*/
+    width: 150px;
+    font-size:1.1em;
+    background-color: white;
+    border-radius:15px;
+    padding: 0.5vh;
+    align-self: center;
+    margin-top: 5vh;
+}
+
+ /*footer*/
+footer{
+    height:24vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+footer:first-child div{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;/* Espacio equitativo entre los elementos */
+}
+footer a{
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    padding: 0 1%; /* Espacio de padding en los lados */
+}
+footer a:hover{
+  padding: 1vh;
+  background-color: #8fa0ff;
+  border-radius: 20px;
+}
+footer img{
+    max-width: 25vw;
+    align-self: center;
+    filter: invert(100%); /* Invertimos los colores de la imagen */
+}
+footer div:last-child{
+    border-top: 2px solid gray;
+    height: 5vh;
+    width: 100%;
+}
+footer:last-child div p{
+    font-size: 1em;
+    color: white;
+    margin: 2vh;
+}
+  
+ 
+  
+
+  
+
+
+
+

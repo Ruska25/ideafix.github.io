@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="" href="CSS/portafolio.css">
+    
+   
+
+    <title>Document</title>
+</head>
+<body>
+   
+
+
+    <div class="menu">
+      <img src="img/logo.png" alt="">
+            
+        <defs>
+        <clipPath id="clip0_7_2">
+        <rect width="263" height="203" fill="white"/>
+        </clipPath>
+        </defs>
+        </svg>
+        
+    <button class="despejar">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav>
+        <button class="cancelar">X</button>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Precios</a></li>
+            <li><a href="portafolio.html">portafolio</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            
+        </ul>
+    </nav>
+
+</div>
+    
+<script src="js/menu.js"></script>
+
+
+    <video autoplay muted>
+        <source src="img/portafolio.mp4" type="video/mp4">
+      </video>
+    
+
+
+
+
+<section class="contenido">
+   <div class="galeria">
+    <a href="img/img2.jpg"><img src="img/img2.jpg"></a>
+    <a href="img/port1.png"><img src="img/port1.png"></a>
+    <a href="img/port2.png"><img src="img/port2.png"></a>
+    <a href="img/port3.png"><img src="img/port3.png"></a>
+    <a href="img/port4.png"><img src="img/port4.png"></a>
+    <a href="img/port5.png"><img src="img/port5.png"></a>
+    <a href="img/port6.png"><img src="img/port6.png"></a>
+    <a href="img/port7.png"><img src="img/port7.png"></a>
+    <a href="img/port8.png"><img src="img/port8.png"></a>
+   </div>
+</section>
+<div class="flechas">
+    <button>&lt;</button>
+    <img src="img/img2.jpg">
+    <button>&gt;</button>
+</div>
+<script src="js/portafolio.js"></script>
+<script>/*
+    const vinculo = document.querySelectorAll(".galeria a");
+const flechas = document.querySelector(".flechas");
+const imgFlechas = document.querySelector(".flechas img");
+
+const antes = document.querySelector(".flechas button:nth-child(1)");
+const siguiente = document.querySelector(".flechas button:nth-child(3)");
+let imagenActual = 0;
+
+vinculo.forEach(function(vinculo,indice){
+	vinculo.addEventListener("click",function(evento){
+		evento.preventDefault();
+		imagenActual = indice;
+		imgFlechas.setAttribute("src",vinculo.getAttribute("href"));
+		flechas.classList.add("visible");
+	});
+});
+
+
+flechas.addEventListener("click",function(){
+	flechas.classList.remove("visible");
+});
+antes.addEventListener("click", function(evento){
+	evento.stopPropagation();
+	imagenActual = imagenActual > 0 ? imagenActual - 1 : vinculo.length - 1;
+	imgFlechas.setAttribute("src",vinculo[imagenActual].getAttribute("href"));
+});
+
+siguiente.addEventListener("click", function(evento){
+	evento.stopPropagation();
+	imagenActual = imagenActual < vinculo.length - 1 ? imagenActual + 1 : 0;
+	imgFlechas.setAttribute("src",vinculo[imagenActual].getAttribute("href"));
+});
+</script>
+
+
+
+
+
+
+<footer>
+    <img src="img/logo.png" alt="">
+    <div>
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="portafolio.html">Portafolio</a>
+        <a href="servicios.html">Precios</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+
+    <div>
+        <p>&copy; Todos los deerechos reservados</p>
+       
+
+    </div>
+   </footer>
+
+
+   </body>
+   </html>

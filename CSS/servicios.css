@@ -1,0 +1,346 @@
+*{
+    margin:0;
+    padding:0;
+    /*! scroll: 0; */
+  }
+  body{
+    background-color: rgb(24, 24, 24);
+   
+  
+  }
+  
+  .menu{
+    height:8vh; /*le da la altura al menu*/
+    background-color:rgb(255, 255, 255); /*cambia el color del fondo*/
+    padding:20px; /* establece espacio interno del menu*/
+    display:flex; /*alinea los elementos del menú*/
+    justify-content:space-evenly; /*Distribuyeel espacio entre los elementos del menú */
+    align-items: center; /*alinia verticalmente los elementos*/
+    font-family: 'Montserrat', sans-serif; /*aplicamos una tipografia*/
+    top: 0; /*crea  posición en la parte superior de la pagina*/
+    width:100%; /*le da un ancho completo al menu*/
+    
+  }
+  
+  .menu img{
+    max-width: 12rem; /*establece las medidas de la imagen*/
+    
+  }
+  nav ul{
+    list-style:none; /*se encarga de que no tenga estilos*/
+    display:flex; 
+  
+  }
+  nav li:not(:last-child){
+    margin-right:20px; /*define un margen en la parte derecha*/
+  
+  }
+  nav li:hover{
+    border: 2px solid #8fa0ff; /* define el grosor y el color del borde*/
+    border-radius: 20px; /* define el radius del borde*/
+    padding: 1vh; /*crea un espacio interno por los cuatro lados*/
+  
+  }
+  
+  nav a{
+    font-size: 1.2em; /* define el tamaño del fuente*/
+    color:rgb(0, 0, 0); /*le asigna el color a la fuente*/
+    text-decoration: none; /* se encarga de que no tennga ningun estilo al elemento, sera underline o otra cosa*/
+  }
+  .despejar, .cancelar{
+    -webkit-appearance: none; /*desahabilita la apariencia del boton*/
+    appearance: none;
+    display: none; /*oculta el boton*/
+  }
+  
+  @media screen and (max-width:800px){/*aplicamos estilos para pantallas  de tamaño reducido*/
+    .menu{
+      justify-content:space-around; /*cambia laa distribución del esspacio enre los elementos*/
+    }
+    nav{
+        position:fixed; /*fija la posición del menu*/
+        top:-100vh; /*muevo el meno hacia arriba y oculto*/
+        left:0;
+        padding:20px;
+        width:calc(100% - 40px);
+        height:calc(100vh - 40px);
+        background-color: #8fa0ff;    
+        transition:top 0.8s;   
+     }
+     .desplegado{
+        top:0;
+     }
+     nav ul{
+        display: block;
+     }
+     nav li:not(:last-child){
+        margin-right:0;
+     }
+     nav a {
+        color:rgb(0, 0, 0);
+        font-size: 2em;
+     }
+     .cancelar{
+        display: block;
+        background-color: transparent; /*le damos un fondo transparente*/
+        border:none;
+        color: rgb(255, 255, 255);
+        font-size: 1.5em;
+        cursor:pointer; /*al mover el cursor encima se convierte en pointer*/
+        position: absolute; /* asigna posición absoluta*/
+        top:20px;
+        right:20px;
+     }
+     .despejar{
+        display: block;
+        background-color: transparent;
+        border:1px solid #999;
+        border-radius:5px;
+        width:30px;
+        padding: 5px 5px 0;
+    }
+    .despejar span{
+    display:block;
+    height:3px;
+    background-color:#777;
+    margin-bottom:5px;
+  }
+  
+  }
+  
+  
+  
+  
+/*header*/
+
+header{ /* le damos una aaltyra fija y un ancho total, nos encargamos que los elementos dentro del header tengas alinieacion vertical y horizontal n el centro y le damos espacio el los lados*/
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 3vw;
+
+}
+header p{ 
+    font-size: 1.1em;
+    color: white;
+    margin:5vh;
+}
+header h1{
+    font-size: 2.5em;
+    color: white;
+    font-weight: bold;
+}
+
+/*precio*/
+
+.precio{
+    height: auto;
+    display: flex;
+    flex-direction: column;/*centrar verticlmente el contenido*/
+    justify-content: center;
+    width: 100%;
+}
+.precio h1{
+    color: #8fa0ff;
+    font-size: 2.6em;
+    text-align: center;
+    margin-bottom: 3vh;
+}
+.precio div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.precio button{
+    width: 100px;
+    margin: 5px;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 1em;
+    color: black;
+    font-weight: bold;
+    text-align: center; 
+      
+
+}
+.cajas_precio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: white;
+    flex-wrap: wrap; /* Permitir envolver los elementos en varias filas */
+}
+.cajas_precio div{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;/* Alinear el contenido a la izquierda */
+    border-radius: 20px;
+    border: 1px solid white;
+    height: auto;
+    width: auto;
+    margin: 8vh;
+    text-align: center;
+    padding: 5vh 0;/* establecemos el espacio de padding en vertical */
+
+}
+.cajas_precio div h2{
+    font-size: 2em;
+    color: white;
+}
+.cajas_precio div h3{
+    font-size: 1.7em;
+    color: white;
+    font-weight: bold;
+    margin: 2vh;
+}
+.cajas_precio div ul {
+    margin-top: 5vh;
+    text-align: left;
+    list-style-type: none;
+    padding: 0 5vw;/* Establecemos el espacio de padding en los lados */
+    
+  }
+
+  .cajas_precio div ul li::before {
+    content: "•"; /*agregamos el punto antes de cada li en el contenido ul*/
+    margin-right: 5px;
+  }
+.cajas_precio div ul li{
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 2vh;
+}
+
+button:hover{
+    background-color: #8fa0ff;  /* Cambiar el color de fondo al pasar el cursor */
+}
+   
+
+
+
+/*preguntas */
+
+.preguntas{
+    height: auto;
+    
+    width:100%;
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+    padding:0 3vw;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.preguntas h1{
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+}
+.preguntas span{
+   
+    color:#8fa0ff;
+}
+.contenido_preguntas {
+    max-width: 80%;
+    margin: 0 auto;
+}
+  
+.pregunta {
+    margin: 5vh;
+}
+  
+.pregunta00 {
+    cursor: pointer;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 15px
+  }
+  
+.respuesta00 {
+    display: none;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #fff
+}
+@media only screen and (max-width: 600px){
+    .contenido_preguntas {
+        max-width: 100%;
+}
+}
+
+/*contacto*/
+.masinfo{
+    height: 50vh;
+    display: flex;
+   justify-content: center;
+   text-align: center;
+   flex-direction: column;
+   align-items: center;
+   background-color: #fff;
+   
+}
+
+.masinfo h1{
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+
+}
+.masinfo button{
+    width: 200px;
+    margin: 5px;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 1em;
+    color: black;
+    font-weight: bold;
+    text-align: center; 
+    margin: 5vh;
+    
+}
+
+/*footer*/
+footer{
+    height:24vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+footer:first-child div{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;/* Espacio equitativo entre los elementos */
+}
+footer a{
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    padding: 0 1%; /* Espacio de padding en los lados */
+}
+footer a:hover{
+  padding: 1vh;
+  background-color: #8fa0ff;
+  border-radius: 20px;
+}
+footer img{
+    max-width: 25vw;
+    align-self: center;
+    filter: invert(100%); /* Invertimos los colores de la imagen */
+}
+footer div:last-child{
+    border-top: 2px solid gray;
+    height: 5vh;
+    width: 100%;
+}
+footer:last-child div p{
+    font-size: 1em;
+    color: white;
+    margin: 2vh;
+}
+  

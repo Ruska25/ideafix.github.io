@@ -1,0 +1,240 @@
+*{
+    margin:0;
+    padding:0;
+    /*! scroll: 0; */
+  }
+  body{
+    background-color: rgb(24, 24, 24);
+   
+  
+  }
+  
+  .menu{
+    height:8vh; /*le da la altura al menu*/
+    background-color:rgb(255, 255, 255); /*cambia el color del fondo*/
+    padding:20px; /* establece espacio interno del menu*/
+    display:flex; /*alinea los elementos del menú*/
+    justify-content:space-evenly; /*Distribuyeel espacio entre los elementos del menú */
+    align-items: center; /*alinia verticalmente los elementos*/
+    font-family: 'Montserrat', sans-serif; /*aplicamos una tipografia*/
+    top: 0; /*crea  posición en la parte superior de la pagina*/
+    width:100%; /*le da un ancho completo al menu*/
+    
+  }
+  
+  .menu img{
+    max-width: 12rem; /*establece las medidas de la imagen*/
+    
+  }
+  nav ul{
+    list-style:none; /*se encarga de que no tenga estilos*/
+    display:flex; 
+  
+  }
+  nav li:not(:last-child){
+    margin-right:20px; /*define un margen en la parte derecha*/
+  
+  }
+  nav li:hover{
+    border: 2px solid #8fa0ff; /* define el grosor y el color del borde*/
+    border-radius: 20px; /* define el radius del borde*/
+    padding: 1vh; /*crea un espacio interno por los cuatro lados*/
+  
+  }
+  
+  nav a{
+    font-size: 1.2em; /* define el tamaño del fuente*/
+    color:rgb(0, 0, 0); /*le asigna el color a la fuente*/
+    text-decoration: none; /* se encarga de que no tennga ningun estilo al elemento, sera underline o otra cosa*/
+  }
+  .despejar, .cancelar{
+    -webkit-appearance: none; /*desahabilita la apariencia del boton*/
+    appearance: none;
+    display: none; /*oculta el boton*/
+  }
+  
+  @media screen and (max-width:800px){/*aplicamos estilos para pantallas  de tamaño reducido*/
+    .menu{
+      justify-content:space-around; /*cambia laa distribución del esspacio enre los elementos*/
+    }
+    nav{
+        position:fixed; /*fija la posición del menu*/
+        top:-100vh; /*muevo el meno hacia arriba y oculto*/
+        left:0;
+        padding:20px;
+        width:calc(100% - 40px);
+        height:calc(100vh - 40px);
+        background-color: #8fa0ff;    
+        transition:top 0.8s;   
+     }
+     .desplegado{
+        top:0;
+     }
+     nav ul{
+        display: block;
+     }
+     nav li:not(:last-child){
+        margin-right:0;
+     }
+     nav a {
+        color:rgb(0, 0, 0);
+        font-size: 2em;
+     }
+     .cancelar{
+        display: block;
+        background-color: transparent; /*le damos un fondo transparente*/
+        border:none;
+        color: rgb(255, 255, 255);
+        font-size: 1.5em;
+        cursor:pointer; /*al mover el cursor encima se convierte en pointer*/
+        position: absolute; /* asigna posición absoluta*/
+        top:20px;
+        right:20px;
+     }
+     .despejar{
+        display: block;
+        background-color: transparent;
+        border:1px solid #999;
+        border-radius:5px;
+        width:30px;
+        padding: 5px 5px 0;
+    }
+    .despejar span{
+    display:block;
+    height:3px;
+    background-color:#777;
+    margin-bottom:5px;
+  }
+  
+  }
+  
+  
+
+
+/*header*/
+header{
+    height: 80vh;
+    display: block;
+    width: 100vw;
+  }
+video{
+    max-width: 100%;
+}
+
+/*portafolio*/
+
+/* Estilo del contenedor principal */
+.contenido{
+	min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Estilo de la galería de imágenes */
+.contenido .galeria{
+	width: 80%;
+    margin: 5vh;
+	display: grid; /*creamos una sistema de cuadricula*/
+	grid-template-columns: repeat(3, auto); /*especificamos la cantidad y el tamaño de las columnas en la cuadrícula*/
+	gap: 5px;/*establecemos el espacio entre las imágenes dentro de la cuadrícula*/
+	margin: 5vh;
+}
+
+/* Estilo de los enlaces y las imágenes dentro de la galería */
+.galeria a,
+.galeria img{
+	display: block;
+	width: 100%;
+    object-fit: fill;
+}
+
+/* Estilo general para todas las imágenes */
+img{
+    max-width: 100%;
+}
+
+/* Estilo de las flechas de navegación */
+.flechas{
+    display: none;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Clase para mostrar las flechas de navegación */
+.visible{
+	display: flex;
+}
+
+/* Estilo de los botones de las flechas */
+button{
+	-webkit-appearance: none;
+	appearance: none;
+	display: block;
+	border: none;
+	background-color: transparent;
+	color: white;
+	font-size: 5em;
+	margin: 0 10px;
+}
+
+/* Estilos específicos para pantallas con ancho máximo de 768px */
+@media only screen and (max-width: 768px){
+   /* Ajuste de la cuadrícula de la galería para pantallas más pequeñas */
+   .contenido .galeria{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /*se encarga de repetir automáticamente el número de columnas según el ancho disponible, y cada columna tendrá un ancho mínimo
+         de 200 píxeles y se expandirá según el espacio disponible*/
+    }
+}
+
+
+
+
+/*footer*/
+footer{
+    height:24vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+footer:first-child div{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;/* Espacio equitativo entre los elementos */
+}
+footer a{
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    padding: 0 1%; /* Espacio de padding en los lados */
+}
+footer a:hover{
+  padding: 1vh;
+  background-color: #8fa0ff;
+  border-radius: 20px;
+}
+footer img{
+    max-width: 25vw;
+    align-self: center;
+    filter: invert(100%); /* Invertimos los colores de la imagen */
+}
+footer div:last-child{
+    border-top: 2px solid gray;
+    height: 5vh;
+    width: 100%;
+}
+footer:last-child div p{
+    font-size: 1em;
+    color: white;
+    margin: 2vh;
+}
+  
